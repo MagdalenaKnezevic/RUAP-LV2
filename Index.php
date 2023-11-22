@@ -60,9 +60,9 @@
     // DB connection info
     // TODO: Update the values for $host, $user, $pwd, and $db //using the values you retrieved
     earlier from the Azure Portal. $host = "value of Data Source";
-    $host = "ruapdbserver.mysql.database.azure.com";
-    $user = "ruapUser@ruapdbserver";
-    $pwd = "Ruap1234";
+    $host = "mknezevic-server";
+    $user = "izaprzkugs";
+    $pwd = "N15XNYA251K85NW45";
     $db = "ruapdb";
     // Connect to database.
     $conn = mysqli_connect($host, $user, $pwd, $db);
@@ -91,16 +91,16 @@
     $registrants = $conn->query($sql_select);
     if ($registrants->num_rows > 0)
     {
-    echo "<h2>People who are registered:</h2>";
-    echo "<table>";
-    echo "<tr><th>Name</th>";
-    echo "<th>Email</th>";
-    echo "<th>Date</th></tr>";
+        echo "<h2>People who are registered:</h2>";
+        echo "<table>";
+        echo "<tr><th>Name</th>";
+        echo "<th>Email</th>";
+        echo "<th>Date</th></tr>";
     while ($registrant = $registrants->fetch_assoc())
     {
-    echo "<tr><td>" . $registrant['name'] . "</td>";
-    echo "<td>" . $registrant['email'] . "</td>";
-    echo "<td>" . $registrant['date'] . "</td></tr>";
+        echo "<tr><td>" . $registrant['name'] . "</td>";
+        echo "<td>" . $registrant['email'] . "</td>";
+        echo "<td>" . $registrant['date'] . "</td></tr>";
     }
     echo "</table>";
     }
